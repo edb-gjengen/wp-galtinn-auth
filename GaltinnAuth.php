@@ -74,7 +74,7 @@ class GaltinnAuth {
         /* Update data */
         $userdata['ID'] = $existing_user->ID;
 
-        $updated_user_id = wp_insert_user($userdata);
+        $updated_user_id = wp_update_user($userdata);
         if (is_wp_error($updated_user_id)) {
             error_log("[error] " . $updated_user_id->get_error_message() . "(username: $username)");
         }
